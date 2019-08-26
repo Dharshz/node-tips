@@ -1,5 +1,5 @@
 <ActionBar title="Life Tips">
-    <ActionItem tap="onShare" ios.systemIcon="9" ios.position="left" android.systemIcon="ic_menu_add" android.position="actionBar">
+    <ActionItem tap="onShare" ios.systemIcon="9" ios.position="left" android.systemIcon="ic_menu_add" android.position="actionBar" (tap)="gotoTest()">
     </ActionItem>
 </ActionBar>
 <ScrollView>
@@ -7,7 +7,8 @@
     <Stack-Layout>
         <CardView *ngFor="let tip of tips" class="cardStyle" margin="10" elevation="40" radius="5">
             <grid-layout rows="auto, auto, auto, auto" columns="*, auto, *">
-                <Label text="{{ tip.title }}" colSpan="3" row="0" style="font-size: 23; font-family: sans-serif; font-weight: bold; padding: 15px" textWrap="true"></Label>
+                <Label text="{{ tip.title }}" colSpan="3" row="0" [nsRouterLink]="['tip']"
+                       style="font-size: 23; font-family: sans-serif; font-weight: bold; padding: 15px" textWrap="true"></Label>
                 <image src="{{ tip.imageUrl }}" stretch="aspectFill" colSpan="3" row="1"></image>
                 <Label ng-if="tip.description" text="{{ tip.description }}" colSpan="3" row="2" style="font-size: 25px; font-family: sans-serif; padding: 5px 15px"
                     textWrap="true"></Label>

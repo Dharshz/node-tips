@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
         this.test();
     }
 
+    gotoTest(){
+        
+    }
+
     test() {
         var options = new RequestOptions({
             headers: new Headers({
